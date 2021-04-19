@@ -56,6 +56,10 @@ public class UserService {
         }
         return md;
     }
-
+     public static int CheckCredentialsOk(String username,String password){
+         for (User user : userRepository.find())
+         { if (Objects.equals(username, user.getUsername())&&Objects.equals(encodePassword(username, password), user.getPassword())&&Objects.equals("Pacient", user.getRole()))return 1;
+         if (Objects.equals(username, user.getUsername())&&Objects.equals(encodePassword(username, password), user.getPassword())&&Objects.equals("Medic", user.getRole()))return 2;}
+     return 0;}
 
 }

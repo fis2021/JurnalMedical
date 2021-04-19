@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.loose.fis.sre.services.UserService;
 
 public class LoginController {
 
@@ -29,16 +30,15 @@ public class LoginController {
             return;
         }
 
-        if (username.equals("pacient") && password.equals("pacient")) {
+        if (UserService.CheckCredentialsOk(username,password)==1) {
             loginMessage.setText("Logare ca si pacient!");
             return;
         }
 
-        if (username.equals("medic") && password.equals("medic")) {
+        if (UserService.CheckCredentialsOk(username,password)==2) {
             loginMessage.setText("Logare ca si medic!");
             return;
         }
-
         loginMessage.setText("Incorrect login!");
     }
 }
