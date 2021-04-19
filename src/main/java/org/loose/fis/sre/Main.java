@@ -12,12 +12,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Main extends Application {
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         initDirectory();
         UserService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Jurnal medical");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
