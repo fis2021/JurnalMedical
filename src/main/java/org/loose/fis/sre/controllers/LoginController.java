@@ -1,13 +1,20 @@
 package org.loose.fis.sre.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
 
-public class LoginController {
+import java.awt.*;
 
+public class LoginController {
+    public static Stage stg;
     @FXML
     public Text loginMessage;
     @FXML
@@ -16,7 +23,7 @@ public class LoginController {
     public TextField usernameField;
 
     @FXML
-    public void handleLoginButtonAction() {
+    public void handleLoginButtonAction() throws Exception{
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -31,8 +38,21 @@ public class LoginController {
         }
 
         if (UserService.CheckCredentialsOk(username,password)==1) {
-            loginMessage.setText("Logare ca si pacient!");
-            return;
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Pacient.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                    PacientController c=fxmlLoader.<PacientController>getController();
+                    c.EmptyJournal(username);
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                    this.stg=stage;
+                    InitialPageController.stg.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            return ;
         }
 
         if (UserService.CheckCredentialsOk(username,password)==2) {
@@ -41,4 +61,5 @@ public class LoginController {
         }
         loginMessage.setText("Incorrect login!");
     }
+
 }

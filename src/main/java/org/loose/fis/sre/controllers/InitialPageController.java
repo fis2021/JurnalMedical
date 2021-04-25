@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.Main;
 
 public class InitialPageController {
-
+    public static Stage stg;
     @FXML
     public void handleLoginButtonAction() throws Exception{
    try{
@@ -17,6 +17,7 @@ public class InitialPageController {
               Stage stage=new Stage();
               stage.setScene(new Scene(root));
               stage.show();
+       this.stg=stage;
               Main.stg.close();
    }catch(Exception e){e.printStackTrace();}
 
