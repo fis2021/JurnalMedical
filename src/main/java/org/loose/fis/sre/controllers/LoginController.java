@@ -8,10 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
-
-import java.awt.*;
 
 public class LoginController {
     public static Stage stg;
