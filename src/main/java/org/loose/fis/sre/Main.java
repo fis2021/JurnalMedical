@@ -29,10 +29,9 @@ public class Main extends Application {
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
-        Path applicationHomePath2 = FileSystemService.APPLICATION_HOME_PATH2;
-        if (!Files.exists(applicationHomePath2))
-            applicationHomePath2.toFile().mkdirs();
+
     }
+
 
 
     public static void main(String[] args) {

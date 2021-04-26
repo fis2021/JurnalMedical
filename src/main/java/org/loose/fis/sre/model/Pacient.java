@@ -1,15 +1,14 @@
 package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
+
 public class Pacient {
     @Id
     private String username;
-    private String[] simptome;
-    private int nr_simptome;
+    private String[] simptome=new String[10];
+    private int nr_simptome=0;
     public Pacient(String username){
         this.username=username;
-        this.nr_simptome=0;
-        this.simptome=new String[10];
     }
     public Pacient() {
     }
@@ -22,7 +21,8 @@ public class Pacient {
     public String getUsername() {
         return username;
     }
-    /*public void addSimptom(String simptom){
+
+    public void addSimptom(String simptom){
         if(nr_simptome==simptome.length){
             String[] aux=new String[simptome.length+10];
             for(int j=0;j<simptome.length;j++)aux[j]=simptome[j];
@@ -31,8 +31,8 @@ public class Pacient {
         simptome[nr_simptome]=simptom;
         nr_simptome++;
     }
-    public void ViewSimptoms(){
-        for(int j=0;j<5;j++)System.out.println(simptome[j]);
+    /*public void ViewSimptoms(){
+        for(int j=0;j<nr_simptome;j++)System.out.println(simptome[j]);
     }*/
 
 }

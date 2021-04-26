@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.UserService;
-
+import org.loose.fis.sre.model.Pacient;
 public class LoginController {
     public static Stage stg;
     @FXML
@@ -18,7 +18,7 @@ public class LoginController {
     public PasswordField passwordField;
     @FXML
     public TextField usernameField;
-
+  public static String pacient;
     @FXML
     public void handleLoginButtonAction() throws Exception{
         String username = usernameField.getText();
@@ -35,6 +35,7 @@ public class LoginController {
         }
 
         if (UserService.CheckCredentialsOk(username,password)==1) {
+            pacient=username;
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Pacient.fxml"));
                     Parent root = (Parent) fxmlLoader.load();

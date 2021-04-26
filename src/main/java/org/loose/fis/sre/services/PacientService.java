@@ -29,12 +29,15 @@ public class PacientService{
                 if(pacient.getNr_simptome()==0)return 1;
         return 0;
     }
-    /*public static void addSimptom(String username,String simptom){
+    public static void addSimptom(String username,String simptom){
         for (Pacient pacient : pacientRepository.find())
             if (Objects.equals(username, pacient.getUsername()) ){
                 pacient.addSimptom(simptom);
-            }}
-    public static void ViewSimptoms(String username){
+                pacientRepository.update(pacient);
+            }
+
+    }
+    /*public static void ViewSimptoms(String username){
         for (Pacient pacient : pacientRepository.find())
             if (Objects.equals(username, pacient.getUsername()) ){
                 pacient.ViewSimptoms();

@@ -10,8 +10,8 @@ public class AddSimptomController {
     @FXML
 
     public void handleAddSimptomButtonAction(){
-      //  PacientService.addSimptom("pacient",simptomField.getText());
-      //  PacientService.ViewSimptoms("pacient");
+        PacientService.addSimptom(LoginController.pacient,simptomField.getText());
+        //PacientService.ViewSimptoms(LoginController.pacient);
     }
     @FXML
     public void handleCancelButtonAction(){
