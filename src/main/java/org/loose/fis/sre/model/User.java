@@ -7,13 +7,13 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private String[] simptome=new String[10];
-    private int nr_simptome=0;
-;
+
+
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
+
     }
 
     public User() {
@@ -29,9 +29,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-    public int getNr_simptome() {
-        return nr_simptome;
     }
 
     public void setPassword(String password) {

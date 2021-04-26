@@ -1,17 +1,10 @@
 package org.loose.fis.sre.services;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.loose.fis.sre.Main;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
-
+import org.loose.fis.sre.model.Pacient;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,6 +22,7 @@ public class UserService {
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
+
     }
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
@@ -71,12 +65,6 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword()) && Objects.equals("Medic", user.getRole()))
                 return 2;
         }
-        return 0;
-    }
-    public static int CheckEmptyJournal(String username) {
-        for (User user : userRepository.find())
-            if (Objects.equals(username, user.getUsername()) )
-                if(user.getNr_simptome()==0)return 1;
         return 0;
     }
 

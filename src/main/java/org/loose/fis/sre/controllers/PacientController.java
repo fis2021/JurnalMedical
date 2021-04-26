@@ -7,14 +7,14 @@ package org.loose.fis.sre.controllers;
         import javafx.scene.text.Text;
         import javafx.stage.Stage;
         import org.loose.fis.sre.Main;
-        import org.loose.fis.sre.services.UserService;
+        import org.loose.fis.sre.services.PacientService;
 public class PacientController {
     public static Stage stg;
    @FXML
     public Text pacientMessage;
 
 public void EmptyJournal(String s){
-    if(UserService.CheckEmptyJournal(s)==1)
+    if(PacientService.CheckEmptyJournal(s)==1)
         pacientMessage.setText("Jurnal gol!");
 }
 
