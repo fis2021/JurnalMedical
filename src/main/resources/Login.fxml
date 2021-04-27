@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="574.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+   <children>
+   
+          <Label layoutX="92.0" layoutY="322.0" mnemonicParsing="true" mouseTransparent="true" text="Username:" wrapText="true">
+         <font>
+            <Font name="Times New Roman Italic" size="20.0" />
+         </font>
+      </Label>
+   
+          <TextField fx:id="usernameField" layoutX="217.0" layoutY="321.0" prefHeight="26.0" prefWidth="152.0" />
+   
+          <PasswordField fx:id="passwordField" layoutX="217.0" layoutY="362.0" />
+        <Button layoutX="522.0" layoutY="413.0" onAction="#handleLoginButtonAction" text="Login" />
+       <Button layoutX="542.0" layoutY="453.0" onAction="#Cancel" text="Cancel" />
+          <Text fx:id="loginMessage" layoutX="397.0" layoutY="499.0" wrappingWidth="178.0" />
+   
+          <HBox alignment="bottom_right" layoutX="61.0" layoutY="486.0" prefHeight="42.0" prefWidth="170.0" spacing="10" />
+       <ImageView blendMode="SRC_ATOP" cache="true" fitHeight="263.0" fitWidth="739.0" focusTraversable="true" layoutX="-2.0" mouseTransparent="true">
+           <image>
+               <Image url="x.png" />
+           </image>
+           <effect>
+               <Reflection fraction="1.0" topOpacity="0.64" />
+           </effect>
+       </ImageView>
+   
+                <Label layoutX="92.0" layoutY="363.0" text="Password:">
+         <font>
+            <Font name="Times New Roman Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
