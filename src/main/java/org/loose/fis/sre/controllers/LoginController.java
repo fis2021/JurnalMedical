@@ -18,7 +18,7 @@ public class LoginController {
     public PasswordField passwordField;
     @FXML
     public TextField usernameField;
-  public static String pacient;
+    public static String pacient;
     @FXML
     public void handleLoginButtonAction() throws Exception{
         String username = usernameField.getText();
@@ -36,19 +36,19 @@ public class LoginController {
 
         if (UserService.CheckCredentialsOk(username,password)==1) {
             pacient=username;
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Pacient.fxml"));
-                    Parent root = (Parent) fxmlLoader.load();
-                    PacientController c=fxmlLoader.<PacientController>getController();
-                    c.EmptyJournal(username);
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                    this.stg=stage;
-                    InitialPageController.stg.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Pacient.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                PacientController c=fxmlLoader.<PacientController>getController();
+                c.EmptyJournal(username);
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+                this.stg=stage;
+                InitialPageController.stg.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             return ;
         }
@@ -60,4 +60,17 @@ public class LoginController {
         loginMessage.setText("Incorrect login!");
     }
 
-}
+    public void Cancel() throws Exception {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("initialpage.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            InitialPageController.stg.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }}}
+

@@ -11,15 +11,15 @@ public class InitialPageController {
     public static Stage stg;
     @FXML
     public void handleLoginButtonAction() throws Exception{
-   try{
-       FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("login.fxml"));
-               Parent root=(Parent)fxmlLoader.load();
-              Stage stage=new Stage();
-              stage.setScene(new Scene(root));
-              stage.show();
-       this.stg=stage;
-              Main.stg.close();
-   }catch(Exception e){e.printStackTrace();}
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("login.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            this.stg=stage;
+            Main.stg.close();
+        }catch(Exception e){e.printStackTrace();}
 
     }
 

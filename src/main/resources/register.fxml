@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="400" prefWidth="600"
-          vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
-          fx:controller="org.loose.fis.sre.controllers.RegistrationController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="FIS - Jurnal medical" GridPane.columnIndex="0" GridPane.columnSpan="2"
-          GridPane.rowIndex="0"/>
+<?import javafx.scene.text.*?>
 
-    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<AnchorPane prefHeight="630.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+    <children>
+        <ImageView fitHeight="630.0" fitWidth="829.0" pickOnBounds="true">
+            <image>
+                <Image url="y.png" />
+            </image>
+        </ImageView>
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Text fx:id="registrationMessage" layoutX="264.0" layoutY="454.0" wrappingWidth="191.0" />
 
-    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ChoiceBox fx:id="role" layoutX="359.0" layoutY="387.0" prefHeight="17.0" prefWidth="111.0">
+        </ChoiceBox>
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Button layoutX="510.0" layoutY="437.0" onAction="#handleRegisterAction" text="Register" />
+        <Label layoutX="269.0" layoutY="306.0" text="Username:" />
 
-    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="usernameField" layoutX="340.0" layoutY="302.0" />
 
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-    </ChoiceBox>
+        <Label layoutX="270.0" layoutY="345.0" text="Password:" />
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Register"/>
-    </HBox>
-</GridPane>
+        <PasswordField fx:id="passwordField" layoutX="340.0" layoutY="341.0" />
+
+        <Label layoutX="287.0" layoutY="395.0" prefHeight="25.0" prefWidth="53.0" text="Role:" />
+    </children>
+</AnchorPane>
