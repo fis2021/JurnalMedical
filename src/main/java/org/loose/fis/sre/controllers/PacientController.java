@@ -70,7 +70,6 @@ public void EmptyJournal(String s){
             RemoveSimptomController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
-
         }
 
 
