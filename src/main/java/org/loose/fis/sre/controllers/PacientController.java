@@ -10,7 +10,7 @@ package org.loose.fis.sre.controllers;
         import org.loose.fis.sre.services.PacientService;
         import org.loose.fis.sre.model.Pacient;
 public class PacientController {
-    public static Stage stg,stgLogout;
+    public static Stage stg,stgLogout,removeStg;
    @FXML
     public Text pacientMessage;
 
@@ -39,7 +39,14 @@ public void EmptyJournal(String s){
 
     @FXML
     public void handleRemoveSimptomAction() {
-
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("removeSimptom.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            removeStg=stage;
+        }catch(Exception e){e.printStackTrace();}
 
 
     }
@@ -60,6 +67,7 @@ public void EmptyJournal(String s){
             stgLogout=stage;
             LoginController.stg.close();
             AddSimptomController.stg.close();
+            RemoveSimptomController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
 
