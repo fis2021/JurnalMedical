@@ -46,4 +46,14 @@ public class PacientService{
         return new Pacient("Username");
 
     }
+    public static int removeSimptom(String username,String simptom){
+        int r=0;
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                r=pacient.removeSimptom(simptom);
+                pacientRepository.update(pacient);
+            }
+        return r;
+
+    }
 }
