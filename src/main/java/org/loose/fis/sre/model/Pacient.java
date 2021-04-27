@@ -31,8 +31,6 @@ public class Pacient {
         simptome[nr_simptome]=simptom;
         nr_simptome++;
     }
-    /*public void ViewSimptoms(){
-        for(int j=0;j<nr_simptome;j++)System.out.println(simptome[j]);
-    }*/
+
 
 }

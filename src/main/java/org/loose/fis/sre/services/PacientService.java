@@ -13,7 +13,7 @@ public class PacientService{
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile2("pacients.db").toFile())
+                .filePath(getPathToFile2("pacienti.db").toFile())
                 .openOrCreate("test", "test");
 
         pacientRepository = database.getRepository(Pacient.class);
@@ -37,10 +37,13 @@ public class PacientService{
             }
 
     }
-    /*public static void ViewSimptoms(String username){
+
+    public static Pacient getPacient(String username){
         for (Pacient pacient : pacientRepository.find())
             if (Objects.equals(username, pacient.getUsername()) ){
-                pacient.ViewSimptoms();
+                return pacient;
             }
-    }*/
+        return new Pacient("Username");
+
+    }
 }

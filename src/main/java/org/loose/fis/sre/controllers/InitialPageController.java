@@ -31,7 +31,6 @@ public class InitialPageController {
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-            Main.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
 
