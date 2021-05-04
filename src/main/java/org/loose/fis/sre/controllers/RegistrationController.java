@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.services.MedicService;
 import org.loose.fis.sre.services.PacientService;
 import org.loose.fis.sre.services.UserService;
 public class RegistrationController {
@@ -30,6 +31,7 @@ public class RegistrationController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
             if ((String) role.getValue()=="Pacient")PacientService.addPacient(usernameField.getText());
+            if ((String) role.getValue()=="Medic") MedicService.addMedic(usernameField.getText());
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }

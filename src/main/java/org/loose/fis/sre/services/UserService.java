@@ -4,7 +4,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
-import org.loose.fis.sre.model.Pacient;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -60,9 +60,13 @@ public class UserService {
 
     public static int CheckCredentialsOk(String username, String password) {
         for (User user : userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword()) && Objects.equals("Pacient", user.getRole()))
+            if (Objects.equals(username, user.getUsername())
+                    && Objects.equals(encodePassword(username, password), user.getPassword())
+                    && Objects.equals("Pacient", user.getRole()))
                 return 1;
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword()) && Objects.equals("Medic", user.getRole()))
+            if (Objects.equals(username, user.getUsername())
+                    && Objects.equals(encodePassword(username, password), user.getPassword())
+                    && Objects.equals("Medic", user.getRole()))
                 return 2;
         }
         return 0;

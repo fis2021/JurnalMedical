@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.FileSystemService;
+import org.loose.fis.sre.services.MedicService;
 import org.loose.fis.sre.services.UserService;
 import org.loose.fis.sre.services.PacientService;
 import java.nio.file.Files;
@@ -19,9 +20,10 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         PacientService.initDatabase();
+        MedicService.initDatabase1();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("initialpage.fxml"));
         primaryStage.setTitle("Jurnal medical");
-        primaryStage.setScene(new Scene(root, 300, 275));t
+        primaryStage.setScene(new Scene(root, 890, 375));
         primaryStage.show();
     }
 
