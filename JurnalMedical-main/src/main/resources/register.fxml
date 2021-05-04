@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="630.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+    <children>
+        <ImageView fitHeight="630.0" fitWidth="829.0" pickOnBounds="true">
+            <image>
+                <Image url="y.png" />
+            </image>
+        </ImageView>
+
+        <Text fx:id="registrationMessage" layoutX="264.0" layoutY="454.0" wrappingWidth="191.0" />
+
+        <ChoiceBox fx:id="role" layoutX="359.0" layoutY="387.0" prefHeight="17.0" prefWidth="111.0">
+        </ChoiceBox>
+
+        <Button layoutX="510.0" layoutY="437.0" onAction="#handleRegisterAction" text="Register" />
+        <Label layoutX="269.0" layoutY="306.0" text="Username:" />
+
+        <TextField fx:id="usernameField" layoutX="340.0" layoutY="302.0" />
+
+        <Label layoutX="270.0" layoutY="345.0" text="Password:" />
+
+        <PasswordField fx:id="passwordField" layoutX="340.0" layoutY="341.0" />
+
+        <Label layoutX="287.0" layoutY="395.0" prefHeight="25.0" prefWidth="53.0" text="Role:" />
+    </children>
+</AnchorPane>

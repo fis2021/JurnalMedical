@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
+          xmlns="http://javafx.com/javafx/8.0.172-ea"
+          fx:controller="org.loose.fis.sre.controllers.PacientController">
+
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+    </padding>
+    <Text id="title-text" text="Jurnalul meu:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Button onAction="#handleAddSimptomButtonAction" text="Add simptom"/>
+    </HBox>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Button onAction="#handleRemoveSimptomAction" text="Remove simptom"/>
+    </HBox>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <Button onAction="#handleViewFeedbackAction" text="View feedback"/>
+    </HBox>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="2">
+        <Button onAction="#handleLogoutAction" text="Logout"/>
+    </HBox>
+    <Text fx:id="pacientMessage" GridPane.rowIndex="1"  GridPane.columnSpan="5"/>
+</GridPane>
