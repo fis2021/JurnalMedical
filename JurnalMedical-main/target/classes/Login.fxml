@@ -37,7 +37,7 @@
           <HBox alignment="bottom_right" layoutX="61.0" layoutY="486.0" prefHeight="42.0" prefWidth="170.0" spacing="10" />
        <ImageView blendMode="SRC_ATOP" cache="true" fitHeight="263.0" fitWidth="739.0" focusTraversable="true" layoutX="-2.0" mouseTransparent="true">
            <image>
-               <Image url="x.png" />
+               <Image url="@x.png" />
            </image>
            <effect>
                <Reflection fraction="1.0" topOpacity="0.64" />

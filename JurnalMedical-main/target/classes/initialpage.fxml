@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.InitialPageController">
    <children>
-      <ImageView fitHeight="458.0" fitWidth="908.0" pickOnBounds="true">
+      <ImageView fitHeight="471.0" fitWidth="908.0" pickOnBounds="true">
          <image>
-            <Image url="Jurnal.png" />
+            <Image url="@Jurnal.png" />
          </image>
       </ImageView>
-        <Button layoutX="723.0" layoutY="28.0" onAction="#handleRegisterAction" style="-fx-background-color: transparent;" text="Register">
+        <Button layoutX="378.0" layoutY="240.0" onAction="#handleRegisterAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: sepia;" text="Register" textFill="WHITE">
          <font>
-            <Font name="Times New Roman Italic" size="12.0" />
+            <Font name="Times New Roman Italic" size="22.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Button>
-      <Button layoutX="814.0" layoutY="28.0" onAction="#handleLoginButtonAction" style="-fx-background-color: transparent;" text="Login">
+      <Button layoutX="378.0" layoutY="272.0" onAction="#handleLoginButtonAction" prefHeight="99.0" prefWidth="140.0" style="-fx-background-color: sepia;" text="Login" textFill="WHITE">
          <font>
-            <Font name="Times New Roman Italic" size="12.0" />
+            <Font name="Times New Roman Italic" size="22.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Button>
    </children>
 </AnchorPane>

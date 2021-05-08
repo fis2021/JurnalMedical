@@ -1,23 +1,21 @@
 package org.loose.fis.sre.controllers;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.loose.fis.sre.Main;
 import org.loose.fis.sre.model.Medic;
 import org.loose.fis.sre.services.MedicService;
-import org.loose.fis.sre.services.PacientService;
-import org.loose.fis.sre.model.Pacient;
 public class MedicController {
-    public static Stage stg,stgLogout;
+    public static Stage stg,stgLogout,remove1Stg;
     @FXML
     public Text medicMessage;
 
-    public void EmptyJournal(String s){
+    public void EmptyJournal1(String s){
         if(MedicService.CheckEmptyJournal1(s)==1)
-            medicMessage.setText("Jurnal gol!");
+            medicMessage.setText("Nici un pacient!");
         else {Medic m=MedicService.getMedic(LoginController.medic);
             String r="";
             for(int j=0;j<m.getNr_pacienti();j++)r=r+m.getPacienti()[j]+"\n";
@@ -41,7 +39,14 @@ public class MedicController {
     @FXML
     public void handleRemoveSimptomAction() {
 
-
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("removePacient.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            remove1Stg=stage;
+        }catch(Exception e){e.printStackTrace();}
 
     }
     @FXML
@@ -49,6 +54,17 @@ public class MedicController {
 
 
 
+    }
+    @FXML
+    public void handleViewJournalAction() {
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("viewJurnal.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            remove1Stg=stage;
+        }catch(Exception e){e.printStackTrace();}
     }
     @FXML
     public void handleLogoutAction() throws Exception{
@@ -60,10 +76,11 @@ public class MedicController {
             stage.show();
             stgLogout=stage;
             LoginController.stg.close();
-            AddSimptomController.stg.close();
+            AddPacientController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
     }
+
 
 
 }

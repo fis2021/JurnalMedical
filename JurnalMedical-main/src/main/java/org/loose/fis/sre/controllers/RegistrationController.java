@@ -31,7 +31,7 @@ public class RegistrationController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
             if ((String) role.getValue()=="Pacient")PacientService.addPacient(usernameField.getText());
-            if ((String) role.getValue()=="Medic") MedicService.addPacient1(usernameField.getText());
+            if ((String) role.getValue()=="Medic") MedicService.addMedic(usernameField.getText());
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }

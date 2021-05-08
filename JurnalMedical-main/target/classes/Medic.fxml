@@ -10,10 +10,8 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Text id="title-text" text="Jurnalul meu:" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0" />
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <Button onAction="#handleAddPacientButtonAction" text="Add pacient" />
-    </HBox>
+    <Text id="title-text" text="Pacientii mei:" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0" />
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
         <Button onAction="#handleRemoveSimptomAction" text="Remove pacient" />
     </HBox>
@@ -21,10 +19,16 @@
         <Button onAction="#handleViewFeedbackAction" text="Trimite feedback" />
     </HBox>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="2">
-        <Button onAction="#handleLogoutAction" text="Logout" />
+        <Button onAction="#handleViewJournalAction" text="Vizualizare jurnal" />
     </HBox>
-    <Text fx:id="pacientMessage" GridPane.columnSpan="5" GridPane.rowIndex="1" />
+<HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="5" GridPane.rowIndex="2">
+<Button onAction="#handleLogoutAction" text="Logout" />
+</HBox>
+    <Text fx:id="medicMessage" GridPane.columnSpan="5" GridPane.rowIndex="1" />
+
+     <Button onAction="#handleAddPacientButtonAction" text="Add pacient" GridPane.rowIndex="2" />
    <columnConstraints>
+      <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />

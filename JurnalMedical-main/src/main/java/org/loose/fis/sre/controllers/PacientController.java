@@ -1,16 +1,15 @@
 package org.loose.fis.sre.controllers;
 
         import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.Parent;
-        import javafx.scene.Scene;
-        import javafx.scene.text.Text;
-        import javafx.stage.Stage;
-        import org.loose.fis.sre.Main;
-        import org.loose.fis.sre.services.PacientService;
-        import org.loose.fis.sre.model.Pacient;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.loose.fis.sre.model.Pacient;
+import org.loose.fis.sre.services.PacientService;
 public class PacientController {
-    public static Stage stg,stgLogout;
+    public static Stage stg,stgLogout,removeStg;
    @FXML
     public Text pacientMessage;
 
@@ -39,8 +38,22 @@ public void EmptyJournal(String s){
 
     @FXML
     public void handleRemoveSimptomAction() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> b42c8ba474ed51ea5e7b39f503a9d7df6ce26948
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("removeSimptom.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            removeStg=stage;
+        }catch(Exception e){e.printStackTrace();}
+<<<<<<< HEAD
+=======
 
+>>>>>>> b42c8ba474ed51ea5e7b39f503a9d7df6ce26948
 
     }
     @FXML
@@ -60,6 +73,7 @@ public void EmptyJournal(String s){
             stgLogout=stage;
             LoginController.stg.close();
             AddSimptomController.stg.close();
+            RemoveSimptomController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
         }
