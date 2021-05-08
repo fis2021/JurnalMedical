@@ -43,9 +43,19 @@ public class PacientService{
             if (Objects.equals(username, pacient.getUsername()) ){
                 return pacient;
             }
-        return new Pacient("Username");
+        return new Pacient("Username");//!!
 
     }
+
+    public static String[] getPacientSymptoms(String username){
+        for(Pacient pacient : pacientRepository.find()){
+            if(Objects.equals(username, pacient.getUsername())){
+                return pacient.getSimptome();
+            }
+        }
+        return null;
+    }
+
     public static int removeSimptom(String username,String simptom){
         int r=0;
         for (Pacient pacient : pacientRepository.find())

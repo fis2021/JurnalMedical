@@ -52,14 +52,32 @@ public class MedicService{
         return new Medic("Username");
 
     }
-    public static int removePacient(String username,String simptom){
+    public static int removePacient(String username,String pacient){
         int r=0;
         for (Medic medic : medicRepository.find())
             if (Objects.equals(username, medic.getUsername()) ){
-                r=medic.removePacient(simptom);
+                r=medic.removePacient(pacient);
                 medicRepository.update(medic);
             }
         return r;
+    }
+    public static int viewJurnal(String username,String pacient){
+        int r=0;
+        for (Medic medic : medicRepository.find())
+            if (Objects.equals(username, medic.getUsername()) ){
+                r=medic.viewJurnal(pacient);
+            }
+        return r;
+    }
 
+    public static String getPacientSymptoms(String username){
+
+        for(Medic medic : medicRepository.find()){
+            if(Objects.equals(username, medic.getUsername())){
+                return medic.getPacientsSymptoms();
+            }
+        }
+        return null;
     }
 }
+//verfica daca are cont daca nu are e 0 daca are, verifica daca e in lista, daca nu e in lista sa afisez -1 daca e in lista sa faca fxmlul

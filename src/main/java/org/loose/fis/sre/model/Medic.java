@@ -1,6 +1,7 @@
 package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
+import org.loose.fis.sre.services.PacientService;
 
 import java.util.Objects;
 
@@ -42,5 +43,23 @@ public class Medic {
                     pacienti[i]=pacienti[i+1];
                 nr_pacienti--;}
         return t;
+    }
+    public int viewJurnal(String Pacient) {
+        int t=1,q=0;
+        for(int j=0;j<pacienti.length;j++)
+            if(Objects.equals(pacienti[j],Pacient))
+                q=1;
+        if(q==0)t=-1;
+        if(PacientService.findPacient(Pacient)==0)t=0;
+      return t;
+    }
+
+    public String getPacientsSymptoms(){
+        String s =  "";
+        for(int i = 0; i < pacienti.length; i++){
+            Pacient a = PacientService.getPacient(pacienti[i]);
+            s = s + a.getSimptome() + "\n";
+        }
+        return s;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Pacient {
     @Id
     private String username;
-    private String[] simptome=new String[10];
+    private String[] simptome=new String[100];
     private int nr_simptome=0;
     public Pacient(String username){
         this.username=username;

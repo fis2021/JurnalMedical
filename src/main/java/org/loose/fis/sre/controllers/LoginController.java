@@ -17,6 +17,7 @@ public class LoginController {
     public PasswordField passwordField;
     @FXML
     public TextField usernameField;
+
     public static String pacient,medic;
     @FXML
     public void handleLoginButtonAction() throws Exception{

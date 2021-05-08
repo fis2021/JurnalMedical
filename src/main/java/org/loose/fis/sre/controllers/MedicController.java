@@ -57,9 +57,14 @@ public class MedicController {
     }
     @FXML
     public void handleViewJournalAction() {
-
-
-
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("viewJurnal.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            remove1Stg=stage;
+        }catch(Exception e){e.printStackTrace();}
     }
     @FXML
     public void handleLogoutAction() throws Exception{
