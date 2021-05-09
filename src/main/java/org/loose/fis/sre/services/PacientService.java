@@ -69,6 +69,28 @@ public class PacientService{
         return gasit;
 
     }
+    public static void sendFeedback(String username,String f){
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                pacient.sendFeedback(f);
+                pacientRepository.update(pacient);
+            }
+
+    }
+    public static String viewFeedback(String username){
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                return pacient.getFeedback();
+            }
+        return "Pacientul nu are cont";
+
+    }
+    public static int CheckNoFeedback(String username) {
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) )
+                if(pacient.getFeedback()==null)return 1;
+        return 0;
+    }
 }
 
 

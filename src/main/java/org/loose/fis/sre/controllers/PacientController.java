@@ -8,8 +8,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.model.Pacient;
 import org.loose.fis.sre.services.PacientService;
+
 public class PacientController {
-    public static Stage stg,stgLogout,removeStg;
+    public static Stage stg,stgLogout,removeStg,feedbackStg;
    @FXML
     public Text pacientMessage;
 
@@ -56,9 +57,12 @@ public void EmptyJournal(String s){
         try{
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("viewFeedback.fxml"));
             Parent root=(Parent)fxmlLoader.load();
+            ViewFeedbackController c=fxmlLoader.<ViewFeedbackController>getController();
+            c.viewFeedback();
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
+            feedbackStg=stage;
         }catch(Exception e){e.printStackTrace();}
 
     }

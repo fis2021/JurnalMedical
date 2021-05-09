@@ -16,7 +16,7 @@
 
         <Label text="Pacient" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <TextField fx:id="pacientField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="feedbackField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
         <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
             <children>
@@ -28,7 +28,7 @@
                 <Button onAction="#handleCancelMButtonAction" text="Cancel" />
             </children>
         </HBox>
-        <Text fx:id="pacientMessage" layoutX="397.0" layoutY="499.0" wrappingWidth="178.0" GridPane.rowIndex="8" />
+        <Text fx:id="feedbackMessage" layoutX="397.0" layoutY="499.0" wrappingWidth="178.0" GridPane.rowIndex="8" />
     </children>
     <columnConstraints>
         <ColumnConstraints />
