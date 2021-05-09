@@ -1,3 +1,4 @@
+
 package org.loose.fis.sre.controllers;
 
 import javafx.fxml.FXML;
@@ -18,3 +19,4 @@ public class ViewFeedbackController {
         PacientController.feedbackStg.close();
   }
 }
+
