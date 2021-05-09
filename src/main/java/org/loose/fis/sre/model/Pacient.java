@@ -9,6 +9,7 @@ public class Pacient {
     private String username;
     private String[] simptome=new String[100];
     private int nr_simptome=0;
+    private String feedback;
     public Pacient(String username){
         this.username=username;
     }
@@ -47,5 +48,8 @@ public class Pacient {
         return gasit;
 
     }
-
+    public void sendFeedback(String f){
+        feedback=f;
+    }
+    public String getFeedback(){return feedback;}
 }

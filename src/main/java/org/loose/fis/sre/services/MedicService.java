@@ -69,5 +69,12 @@ public class MedicService{
             }
         return r;
     }
+    public static void  sendFeedback(String username,String pacient,String f){
+        for (Medic medic : medicRepository.find())
+            if (Objects.equals(username, medic.getUsername()) )
+                if(PacientService.findPacient(pacient)==1){
+                    PacientService.sendFeedback(pacient,f);
+                }
 
+    }
 }
