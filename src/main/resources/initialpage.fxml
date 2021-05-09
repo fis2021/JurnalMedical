@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.InitialPageController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.InitialPageController">
    <children>
-      <ImageView fitHeight="471.0" fitWidth="908.0" pickOnBounds="true">
+      <ImageView depthTest="ENABLE" fitHeight="471.0" fitWidth="908.0" pickOnBounds="true">
          <image>
             <Image url="@Jurnal.png" />
          </image>
       </ImageView>
-        <Button layoutX="378.0" layoutY="240.0" onAction="#handleRegisterAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: sepia;" text="Register" textFill="WHITE">
+        <Button blendMode="HARD_LIGHT" layoutX="398.0" layoutY="187.0" onAction="#handleRegisterButtonAction" prefHeight="31.0" prefWidth="124.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Register" textFill="WHITE" textOverrun="WORD_ELLIPSIS" underline="true">
          <font>
-            <Font name="Times New Roman Italic" size="22.0" />
+            <Font name="MV Boli" size="23.0" />
          </font>
          <effect>
-            <Glow level="1.0" />
+            <DropShadow height="29.16" radius="16.4875" width="38.79">
+               <color>
+                  <Color red="0.13333334028720856" blue="1.0" />
+               </color>
+            </DropShadow>
          </effect>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </Button>
-      <Button layoutX="378.0" layoutY="272.0" onAction="#handleLoginButtonAction" prefHeight="99.0" prefWidth="140.0" style="-fx-background-color: sepia;" text="Login" textFill="WHITE">
+      <Button blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="528.0" layoutY="243.0" onAction="#handleLoginButtonAction" prefHeight="56.0" prefWidth="124.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Login" textFill="WHITE" textOverrun="WORD_ELLIPSIS" underline="true">
          <font>
-            <Font name="Times New Roman Italic" size="22.0" />
+            <Font name="MV Boli" size="23.0" />
          </font>
          <effect>
-            <Glow level="1.0" />
+            <DropShadow radius="14.4475" width="38.79">
+               <color>
+                  <Color red="0.06666667014360428" blue="1.0" />
+               </color>
+            </DropShadow>
          </effect>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </Button>
    </children>
 </AnchorPane>

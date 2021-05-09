@@ -24,7 +24,7 @@ public class InitialPageController {
     }
 
     @FXML
-    public void handleRegisterAction() throws Exception{
+    public void handleRegisterButtonAction() throws Exception{
         try{
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("register.fxml"));
             Parent root=(Parent)fxmlLoader.load();

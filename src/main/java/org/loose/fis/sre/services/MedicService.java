@@ -70,14 +70,4 @@ public class MedicService{
         return r;
     }
 
-    public static String getPacientSymptoms(String username){
-
-        for(Medic medic : medicRepository.find()){
-            if(Objects.equals(username, medic.getUsername())){
-                return medic.getPacientsSymptoms();
-            }
-        }
-        return null;
-    }
 }
-//verfica daca are cont daca nu are e 0 daca are, verifica daca e in lista, daca nu e in lista sa afisez -1 daca e in lista sa faca fxmlul

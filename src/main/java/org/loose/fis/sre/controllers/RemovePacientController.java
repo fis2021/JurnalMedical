@@ -22,6 +22,7 @@ public class RemovePacientController {
         else if(q==0)pacMessage.setText("Acest pacient nu exista in jurnalul dumneavoastra!");
         if(q==1)
             try {if(stg!=null)this.stg.close();
+
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Medic.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
                 MedicController c=fxmlLoader.<MedicController>getController();

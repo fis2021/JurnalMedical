@@ -15,9 +15,7 @@
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
         <Button onAction="#handleRemoveSimptomAction" text="Remove pacient" />
     </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="2">
-        <Button onAction="#handleViewFeedbackAction" text="Trimite feedback" />
-    </HBox>
+
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="2">
         <Button onAction="#handleViewJournalAction" text="Vizualizare jurnal" />
     </HBox>

@@ -48,16 +48,24 @@ public void EmptyJournal(String s){
             removeStg=stage;
         }catch(Exception e){e.printStackTrace();}
 
+
     }
     @FXML
     public void handleViewFeedbackAction() {
 
-
+        try{
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("viewFeedback.fxml"));
+            Parent root=(Parent)fxmlLoader.load();
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }catch(Exception e){e.printStackTrace();}
 
     }
     @FXML
     public void handleLogoutAction() throws Exception{
-        try{if(stgLogout!=null)stgLogout.close();
+        try{if(stgLogout!=null)
+            stgLogout.close();
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("initialpage.fxml"));
             Parent root=(Parent)fxmlLoader.load();
             Stage stage=new Stage();
@@ -65,7 +73,8 @@ public void EmptyJournal(String s){
             stage.show();
             stgLogout=stage;
             LoginController.stg.close();
-            AddSimptomController.stg.close();
+            if(AddSimptomController.stg!=null)AddSimptomController.stg.close();
+            if(RemoveSimptomController.stg!=null)RemoveSimptomController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
         }

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
+          xmlns="http://javafx.com/javafx/8.0.172-ea"
+          fx:controller="org.loose.fis.sre.controllers.PacientJournalController">
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.PacientJournalController">
-   <children>
-      <Text fx:id="pacientSymptoms" layoutX="210.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-   </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+   </padding>
+   <Text id="title-text" text="Jurnalul pacientului:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5"/>
+
+   <Text fx:id="pacientMessage" GridPane.rowIndex="1"  GridPane.columnSpan=   "5"/>
+   <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <Button onAction="#handleSendFeedbackAction" text="Trimite feedback" />
+   </HBox>
+</GridPane>

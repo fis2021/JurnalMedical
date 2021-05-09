@@ -23,7 +23,9 @@ public class Main extends Application {
         MedicService.initDatabase1();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("initialpage.fxml"));
         primaryStage.setTitle("Jurnal medical");
-        primaryStage.setScene(new Scene(root, 890, 375));
+
+        primaryStage.setScene(new Scene(root));
+
         primaryStage.show();
     }
 

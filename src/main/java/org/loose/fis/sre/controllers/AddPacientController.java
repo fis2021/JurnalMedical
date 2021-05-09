@@ -28,6 +28,7 @@ public class AddPacientController {
             stage.setScene(new Scene(root));
             stage.show();
             this.stg=stage;
+
             LoginController.stg.close();
             MedicController.stg.close();
         } catch (Exception e) {

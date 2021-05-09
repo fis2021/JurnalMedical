@@ -35,9 +35,12 @@ public class RemoveSimptomController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
     }
     @FXML
     public void handleCancelButtonAction(){
         PacientController.removeStg.close();
     }
+
 }
+

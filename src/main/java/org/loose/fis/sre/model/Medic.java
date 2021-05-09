@@ -47,19 +47,12 @@ public class Medic {
     public int viewJurnal(String Pacient) {
         int t=1,q=0;
         for(int j=0;j<pacienti.length;j++)
-            if(Objects.equals(pacienti[j],Pacient))
-                q=1;
+            if(Objects.equals(pacienti[j],Pacient)) {
+                q = 1;
+            }
         if(q==0)t=-1;
         if(PacientService.findPacient(Pacient)==0)t=0;
       return t;
     }
 
-    public String getPacientsSymptoms(){
-        String s =  "";
-        for(int i = 0; i < pacienti.length; i++){
-            Pacient a = PacientService.getPacient(pacienti[i]);
-            s = s + a.getSimptome() + "\n";
-        }
-        return s;
-    }
 }

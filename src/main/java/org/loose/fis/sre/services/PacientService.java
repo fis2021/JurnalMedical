@@ -47,14 +47,6 @@ public class PacientService{
 
     }
 
-    public static String[] getPacientSymptoms(String username){
-        for(Pacient pacient : pacientRepository.find()){
-            if(Objects.equals(username, pacient.getUsername())){
-                return pacient.getSimptome();
-            }
-        }
-        return null;
-    }
 
     public static int removeSimptom(String username,String simptom){
         int r=0;
@@ -66,6 +58,7 @@ public class PacientService{
         return r;
 
     }
+
     public static int findPacient(String username){
         int gasit=0;
         for (Pacient pacient : pacientRepository.find())
@@ -77,3 +70,5 @@ public class PacientService{
 
     }
 }
+
+

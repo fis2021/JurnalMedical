@@ -50,12 +50,6 @@ public class MedicController {
 
     }
     @FXML
-    public void handleViewFeedbackAction() {
-
-
-
-    }
-    @FXML
     public void handleViewJournalAction() {
         try{
             FXMLLoader fxmlLoader= new FXMLLoader(getClass().getClassLoader().getResource("viewJurnal.fxml"));
@@ -63,7 +57,6 @@ public class MedicController {
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-            remove1Stg=stage;
         }catch(Exception e){e.printStackTrace();}
     }
     @FXML
@@ -76,7 +69,7 @@ public class MedicController {
             stage.show();
             stgLogout=stage;
             LoginController.stg.close();
-            AddPacientController.stg.close();
+           if(AddPacientController.stg!=null)AddPacientController.stg.close();
         }catch(Exception e){e.printStackTrace();}
 
     }

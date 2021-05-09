@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -22,4 +23,7 @@
         <Button onAction="#handleCancelButtonAction" text="Cancel"/>
     </HBox>
     <Text fx:id="simptomMessage" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
 </GridPane>
+
+
