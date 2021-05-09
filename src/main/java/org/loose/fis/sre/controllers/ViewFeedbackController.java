@@ -14,5 +14,7 @@ public class ViewFeedbackController {
 
             feedbackMessage.setText(PacientService.viewFeedback(LoginController.pacient));
         }}
-
+  public void handleBackAction(){
+        PacientController.feedbackStg.close();
+  }
 }

@@ -10,7 +10,7 @@ import org.loose.fis.sre.model.Pacient;
 import org.loose.fis.sre.services.PacientService;
 
 public class PacientController {
-    public static Stage stg,stgLogout,removeStg;
+    public static Stage stg,stgLogout,removeStg,feedbackStg;
    @FXML
     public Text pacientMessage;
 
@@ -62,6 +62,7 @@ public void EmptyJournal(String s){
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
+            feedbackStg=stage;
         }catch(Exception e){e.printStackTrace();}
 
     }
