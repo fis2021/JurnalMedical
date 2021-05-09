@@ -14,4 +14,7 @@
     <Text id="title-text" text="Feedback:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5"/>
 
     <Text fx:id="feedbackMessage" GridPane.rowIndex="1"  GridPane.columnSpan="5"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="2">
+        <Button onAction="#handleBackAction" text="Back"/>
+    </HBox>
 </GridPane>
