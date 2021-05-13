@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="417.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.PacientController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="811.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@g.jpg" />
+         </image>
+      </ImageView>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="15.0" layoutY="332.0" onAction="#handleAddSimptomButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Add simptom">
+         <font>
+            <Font name="MV Boli" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+         </effect></Button>
+       <Text id="title-text" fill="WHITE" layoutX="87.0" layoutY="59.0" text="Jurnalul meu:" wrappingWidth="127.28125">
+         <font>
+            <Font name="MV Boli" size="18.0" />
+         </font></Text>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="60.0" layoutY="387.0" onAction="#handleRemoveSimptomAction" prefHeight="30.0" prefWidth="136.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Remove simptom">
+       <font>
+           <Font name="MV Boli" size="12.0" />
+       </font>
+       <effect>
+           <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+       </effect>
+       </Button>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="151.0" layoutY="332.0" onAction="#handleViewFeedbackAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="View feedback">
+            <font>
+                <Font name="MV Boli" size="12.0" />
+            </font>
+            <effect>
+                <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+            </effect></Button>
+       <Button blendMode="SCREEN" defaultButton="true" layoutX="728.0" layoutY="23.0" onAction="#handleLogoutAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Logout">
+           <font>
+               <Font name="MV Boli" size="12.0" />
+           </font>
+           <effect>
+               <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+           </effect>
+       </Button>
+       <Text fx:id="pacientMessage" fill="WHITE" layoutX="60.0" layoutY="122.0" wrappingWidth="182.0">
+         <font>
+            <Font name="MV Boli" size="16.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
