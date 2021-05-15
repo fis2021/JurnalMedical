@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400" prefWidth="719.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewJurnalController">
+    <ImageView fitHeight="400.0" fitWidth="719.0" pickOnBounds="true">
+        <image>
+            <Image url="@img_11.png" />
+        </image>
+    </ImageView>
+
+    <Text id="title-text" fill="WHITE" layoutX="31.0" layoutY="36.0" text="Al carui pacient doriti sa vedeti jurnalul?" wrappingWidth="298.1083984375" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <font>
+            <Font name="MV Boli" size="19.0" />
+        </font></Text>
+
+    <Label layoutX="19.0" layoutY="121.0" text="Pacient:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="23.0" />
+        </font></Label>
+
+    <TextField fx:id="pacField" layoutX="121.0" layoutY="129.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="13.0" />
+        </font></TextField>
+    <Text fx:id="pacMessage" fill="WHITE" layoutX="115.0" layoutY="249.0" wrappingWidth="129.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <font>
+            <Font name="MV Boli" size="13.0" />
+        </font></Text>
+    <Button blendMode="LIGHTEN" defaultButton="true" layoutX="185.0" layoutY="177.0" onAction="#handleViewJurnalButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Vezi Jurnalul">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="52.14" radius="28.905" width="65.48">
+                <color>
+                    <Color red="1.0" green="1.0" blue="1.0" />
+                </color>
+            </DropShadow>
+        </effect>
+    </Button>
+    <Button blendMode="LIGHTEN" defaultButton="true" layoutX="155.0" layoutY="333.0" onAction="#handleCancelMButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Cancel">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="52.14" radius="28.905" width="65.48">
+                <color>
+                    <Color red="1.0" green="1.0" blue="1.0" />
+                </color>
+            </DropShadow>
+        </effect></Button>
+</AnchorPane>

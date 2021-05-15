@@ -1,11 +1,11 @@
 package org.loose.fis.sre.services;
 
-        import org.dizitart.no2.Nitrite;
-        import org.dizitart.no2.objects.ObjectRepository;
-        import org.loose.fis.sre.model.Pacient;
-        import java.util.Objects;
+import org.dizitart.no2.Nitrite;
+import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.model.Pacient;
+import java.util.Objects;
 
-        import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
+import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class PacientService{
 
@@ -13,7 +13,7 @@ public class PacientService{
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile2("pacienti.db").toFile())
+                .filePath(getPathToFile("pacienti.db").toFile())
                 .openOrCreate("test", "test");
 
         pacientRepository = database.getRepository(Pacient.class);
@@ -43,9 +43,11 @@ public class PacientService{
             if (Objects.equals(username, pacient.getUsername()) ){
                 return pacient;
             }
-        return new Pacient("Username");
+        return new Pacient("Username");//!!
 
     }
+
+
     public static int removeSimptom(String username,String simptom){
         int r=0;
         for (Pacient pacient : pacientRepository.find())
@@ -56,4 +58,39 @@ public class PacientService{
         return r;
 
     }
+
+    public static int findPacient(String username){
+        int gasit=0;
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                gasit =1;
+                break;
+            }
+        return gasit;
+
+    }
+    public static void sendFeedback(String username,String f){
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                pacient.sendFeedback(f);
+                pacientRepository.update(pacient);
+            }
+
+    }
+    public static String viewFeedback(String username){
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) ){
+                return pacient.getFeedback();
+            }
+        return "Pacientul nu are cont";
+
+    }
+    public static int CheckNoFeedback(String username) {
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) )
+                if(pacient.getFeedback()==null)return 1;
+        return 0;
+    }
 }
+
+

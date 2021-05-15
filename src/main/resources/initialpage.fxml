@@ -1,23 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.loose.fis.sre.controllers.InitialPageController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="FIS - Jurnal Medical" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0"/>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button onAction="#handleLoginButtonAction" text="Login"/>
-    </HBox>
-
-
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Register"/>
-    </HBox>
-</GridPane>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.InitialPageController">
+    <children>
+        <ImageView depthTest="ENABLE" fitHeight="471.0" fitWidth="908.0" pickOnBounds="true">
+            <image>
+                <Image url="@img.png" />
+            </image>
+        </ImageView>
+        <Button blendMode="HARD_LIGHT" layoutX="398.0" layoutY="187.0" onAction="#handleRegisterButtonAction" prefHeight="31.0" prefWidth="124.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Register" textFill="WHITE" textOverrun="WORD_ELLIPSIS" underline="true">
+            <font>
+                <Font name="MV Boli" size="23.0" />
+            </font>
+            <effect>
+                <DropShadow height="29.16" radius="16.4875" width="38.79">
+                    <color>
+                        <Color red="0.13333334028720856" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </Button>
+        <Button blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="528.0" layoutY="243.0" onAction="#handleLoginButtonAction" prefHeight="56.0" prefWidth="124.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Login" textFill="WHITE" textOverrun="WORD_ELLIPSIS" underline="true">
+            <font>
+                <Font name="MV Boli" size="23.0" />
+            </font>
+            <effect>
+                <DropShadow radius="14.4475" width="38.79">
+                    <color>
+                        <Color red="0.06666667014360428" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+    </children>
+</AnchorPane>

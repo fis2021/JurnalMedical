@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.loose.fis.sre.controllers.AddSimptomController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="Adaugati un simptom!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0"/>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-    <Label text="Simptom:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<AnchorPane prefHeight="504.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddSimptomController">
+    <children>
+        <ImageView fitHeight="563.0" fitWidth="1109.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@img_3.png" />
+            </image>
+        </ImageView>
+        <Text id="title-text" fill="#b7b6ff" layoutX="174.0" layoutY="163.0" text="Adaugati un simptom!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <font>
+                <Font name="MV Boli" size="21.0" />
+            </font>
+        </Text>
 
-    <TextField fx:id="simptomField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label layoutX="41.0" layoutY="252.0" text="Simptom:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+                <Font name="MV Boli" size="17.0" />
+            </font>
+        </Label>
 
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button onAction="#handleAddSimptomButtonAction" text="Add simptom"/>
-    </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="35">
-        <Button onAction="#handleCancelButtonAction" text="Cancel"/>
-    </HBox>
-</GridPane>
+        <TextField fx:id="simptomField" layoutX="137.0" layoutY="251.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="MV Boli" size="13.0" />
+            </font>
+        </TextField>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="143.0" layoutY="411.0" onAction="#handleCancelButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Cancel">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Button>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="352.0" layoutY="253.0" onAction="#handleAddSimptomButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Add simptom">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Button>
+    </children>
+</AnchorPane>

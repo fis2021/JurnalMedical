@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.loose.fis.sre.controllers.PacientController">
+<?import javafx.scene.text.*?>
 
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="Jurnalul meu:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <Button onAction="#handleAddSimptomButtonAction" text="Add simptom"/>
-    </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="2">
-        <Button onAction="#handleRemoveSimptomAction" text="Remove simptom"/>
-    </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="2">
-        <Button onAction="#handleViewFeedbackAction" text="View feedback"/>
-    </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="2">
-        <Button onAction="#handleLogoutAction" text="Logout"/>
-    </HBox>
-    <Text fx:id="pacientMessage" GridPane.rowIndex="1"  GridPane.columnSpan="5"/>
-</GridPane>
+<AnchorPane prefHeight="417.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.PacientController">
+    <children>
+        <ImageView fitHeight="500.0" fitWidth="811.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img_5.png" />
+            </image>
+        </ImageView>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="15.0" layoutY="332.0" onAction="#handleAddSimptomButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Add simptom">
+            <font>
+                <Font name="MV Boli" size="12.0" />
+            </font>
+            <effect>
+                <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+            </effect></Button>
+        <Text id="title-text" fill="WHITE" layoutX="87.0" layoutY="59.0" text="Jurnalul meu:" wrappingWidth="127.28125">
+            <font>
+                <Font name="MV Boli" size="18.0" />
+            </font></Text>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="60.0" layoutY="387.0" onAction="#handleRemoveSimptomAction" prefHeight="30.0" prefWidth="136.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Remove simptom">
+            <font>
+                <Font name="MV Boli" size="12.0" />
+            </font>
+            <effect>
+                <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+            </effect>
+        </Button>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="151.0" layoutY="332.0" onAction="#handleViewFeedbackAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="View feedback">
+            <font>
+                <Font name="MV Boli" size="12.0" />
+            </font>
+            <effect>
+                <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+            </effect></Button>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="728.0" layoutY="23.0" onAction="#handleLogoutAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Logout">
+            <font>
+                <Font name="MV Boli" size="12.0" />
+            </font>
+            <effect>
+                <DropShadow color="#b2b0b0" height="38.79" radius="25.567500000000003" width="65.48" />
+            </effect>
+        </Button>
+        <Text fx:id="pacientMessage" fill="WHITE" layoutX="60.0" layoutY="122.0" wrappingWidth="182.0">
+            <font>
+                <Font name="MV Boli" size="16.0" />
+            </font></Text>
+    </children>
+</AnchorPane>

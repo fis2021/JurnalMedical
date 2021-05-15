@@ -1,26 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.loose.fis.sre.controllers.RemoveSimptomController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="Eliminati un simptom!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0"/>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-    <Label text="Simptom:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<AnchorPane prefHeight="406.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RemoveSimptomController">
+    <ImageView fitHeight="410.0" fitWidth="716.0" pickOnBounds="true">
+        <image>
+            <Image url="@img_4.png" />
+        </image></ImageView>
+    <Text id="title-text" fill="WHITE" layoutX="83.0" layoutY="67.0" text="Eliminati un simptom!" wrappingWidth="218.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <font>
+            <Font name="MV Boli" size="20.0" />
+        </font></Text>
 
-    <TextField fx:id="simptomField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label layoutX="14.0" layoutY="114.0" text="Simptom:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="20.0" />
+        </font></Label>
 
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button onAction="#handleRemoveSimptomButtonAction" text="Remove simptom"/>
-    </HBox>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="35">
-        <Button onAction="#handleCancelButtonAction" text="Cancel"/>
-    </HBox>
-    <Text fx:id="simptomMessage" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-</GridPane>
+    <TextField fx:id="simptomField" layoutX="130.0" layoutY="118.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="13.0" />
+        </font></TextField>
+    <Text fx:id="simptomMessage" fill="WHITE" layoutX="83.0" layoutY="193.0" wrappingWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font></Text>
+    <Button blendMode="LIGHTEN" defaultButton="true" layoutX="50.0" layoutY="221.0" onAction="#handleRemoveSimptomButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Remove simptom">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="52.14" radius="28.905" width="65.48">
+                <color>
+                    <Color red="1.0" green="1.0" blue="1.0" />
+                </color>
+            </DropShadow>
+        </effect></Button>
+    <Button blendMode="LIGHTEN" defaultButton="true" layoutX="241.0" layoutY="322.0" onAction="#handleCancelButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Cancel">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="52.14" radius="28.905" width="65.48">
+                <color>
+                    <Color red="1.0" green="1.0" blue="1.0" />
+                </color>
+            </DropShadow>
+        </effect></Button>
+
+</AnchorPane>

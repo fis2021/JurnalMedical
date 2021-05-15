@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewFeedbackController">
+    <ImageView fitHeight="400.0" fitWidth="698.0" pickOnBounds="true">
+        <image>
+            <Image url="@img_6.png" />
+        </image>
+    </ImageView>
+
+    <Text id="title-text" fill="WHITE" layoutX="104.0" layoutY="44.0" text="Feedback:" wrappingWidth="170.74609375" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0">
+        <font>
+            <Font name="MV Boli" size="25.0" />
+        </font></Text>
+    <Button blendMode="LIGHTEN" defaultButton="true" layoutX="328.0" layoutY="259.0" onAction="#handleBackAction" prefHeight="30.0" prefWidth="90.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Back">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="52.14" radius="28.905" width="65.48">
+                <color>
+                    <Color red="1.0" green="1.0" blue="1.0" />
+                </color>
+            </DropShadow>
+        </effect>
+    </Button>
+
+    <Text fx:id="feedbackMessage" fill="WHITE" layoutX="126.0" layoutY="114.0" wrappingWidth="123.74609375" GridPane.columnSpan="5" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="10.0" />
+        </font></Text>
+</AnchorPane>

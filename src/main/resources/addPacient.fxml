@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddPacientController">
+    <children>
+        <ImageView fitHeight="502.0" fitWidth="859.0" pickOnBounds="true">
+            <image>
+                <Image url="@img_8.png" />
+            </image>
+        </ImageView>
+        <Text id="title-text" fill="WHITE" layoutX="64.0" layoutY="117.0" text="Adaugati un pacient!" underline="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <font>
+                <Font name="MV Boli" size="21.0" />
+            </font></Text>
+
+        <Label layoutX="26.0" layoutY="201.0" text="Pacient" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+                <Font name="MV Boli" size="22.0" />
+            </font></Label>
+
+        <TextField fx:id="pacientField" layoutX="120.0" layoutY="208.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Text fx:id="pacientMessage" fill="WHITE" layoutX="30.0" layoutY="358.0" wrappingWidth="194.0" GridPane.rowIndex="8">
+            <font>
+                <Font name="MV Boli" size="13.0" />
+            </font></Text>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="127.0" layoutY="273.0" onAction="#handleAddPacientButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Add pacient">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Button>
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="33.0" layoutY="400.0" onAction="#handleCancelMButtonAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Cancel">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Button>
+    </children>
+</AnchorPane>

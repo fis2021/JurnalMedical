@@ -1,28 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.loose.fis.sre.controllers.LoginController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="FIS - Jurnal Medical" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0"/>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<AnchorPane prefHeight="574.0" prefWidth="1029.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <children>
+        <ImageView blendMode="SRC_ATOP" cache="true" fitHeight="574.0" fitWidth="1161.0" focusTraversable="true" layoutX="-74.0" mouseTransparent="true">
+            <image>
+                <Image url="@img_1.png" />
+            </image>
+        </ImageView>
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label layoutX="353.0" layoutY="262.0" mnemonicParsing="true" mouseTransparent="true" text="Username:" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="Times New Roman Italic" size="20.0" />
+            </font>
+        </Label>
 
-    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="usernameField" layoutX="454.0" layoutY="261.0" prefHeight="26.0" prefWidth="152.0" />
+        <Button blendMode="COLOR_DODGE" layoutX="646.0" layoutY="268.0" onAction="#handleLoginButtonAction" prefHeight="35.0" prefWidth="74.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Login">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="44.47" radius="23.96" spread="0.56" width="53.37">
+                    <color>
+                        <Color red="0.10196078568696976" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect></Button>
+        <Button blendMode="COLOR_DODGE" defaultButton="true" layoutX="475.0" layoutY="391.0" onAction="#Cancel" prefHeight="35.0" prefWidth="86.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Cancel" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Italic" size="15.0" />
+            </font>
+            <effect>
+                <DropShadow height="62.51" radius="32.98" spread="0.12" width="71.41">
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color>
+                </DropShadow>
+            </effect></Button>
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="passwordField" layoutX="456.0" layoutY="315.0" />
+        <Text fx:id="loginMessage" fill="WHITE" layoutX="418.0" layoutY="367.0" wrappingWidth="178.0" />
+        <HBox alignment="bottom_right" layoutX="61.0" layoutY="486.0" prefHeight="42.0" prefWidth="170.0" spacing="10" />
 
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button onAction="#handleLoginButtonAction" text="Login"/>
-    </HBox>
-
-    <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-</GridPane>
+        <Label layoutX="354.0" layoutY="316.0" text="Password:" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman Italic" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

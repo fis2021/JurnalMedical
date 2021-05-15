@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="518.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.PacientJournalController">
+    <ImageView fitHeight="518.0" fitWidth="808.0" pickOnBounds="true">
+        <image>
+            <Image url="@img_12.png" />
+        </image>
+        <effect>
+            <DropShadow radius="12.225" width="29.9" />
+        </effect>
+    </ImageView>
+
+    <Text id="title-text" fill="WHITE" layoutX="482.0" layoutY="44.0" text="Jurnalul pacientului:" wrappingWidth="311.771484375" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0">
+        <font>
+            <Font name="MV Boli" size="26.0" />
+        </font></Text>
+    <Text fx:id="pacientMessage" fill="WHITE" layoutX="515.0" layoutY="113.0" wrappingWidth="269.0" GridPane.columnSpan="5" GridPane.rowIndex="1">
+        <font>
+            <Font name="MV Boli" size="24.0" />
+        </font></Text>
+    <Button blendMode="HARD_LIGHT" layoutX="570.0" layoutY="347.0" onAction="#handleSendFeedbackAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Trimite feedback">
+        <font>
+            <Font name="MV Boli" size="12.0" />
+        </font>
+        <effect>
+            <DropShadow height="82.53" radius="43.915" spread="0.3" width="95.13" />
+        </effect>
+    </Button>
+</AnchorPane>
