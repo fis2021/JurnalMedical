@@ -5,7 +5,7 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.model.Pacient;
 import java.util.Objects;
 
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
+import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class PacientService{
 
@@ -13,7 +13,7 @@ public class PacientService{
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile2("pacienti.db").toFile())
+                .filePath(getPathToFile("pacienti.db").toFile())
                 .openOrCreate("test", "test");
 
         pacientRepository = database.getRepository(Pacient.class);

@@ -6,15 +6,15 @@ import org.loose.fis.sre.model.Medic;
 
 import java.util.Objects;
 
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
+import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class MedicService{
 
     private static ObjectRepository<Medic> medicRepository;
 
-    public static void initDatabase1() {
+    public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile2("medici.db").toFile())
+                .filePath(getPathToFile("medici.db").toFile())
                 .openOrCreate("test", "test");
 
         medicRepository = database.getRepository(Medic.class);
