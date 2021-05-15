@@ -2,7 +2,10 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.SimptomAlreadyExistsException;
 import org.loose.fis.sre.model.Pacient;
+
+import java.util.List;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -10,9 +13,9 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class PacientService{
 
     private static ObjectRepository<Pacient> pacientRepository;
-
+    private static Nitrite database;
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("pacienti.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -29,7 +32,13 @@ public class PacientService{
                 if(pacient.getNr_simptome()==0)return 1;
         return 0;
     }
-    public static void addSimptom(String username,String simptom){
+    public static void checkSimptomDoesNotAlreadyExist(String username,String simptom)throws SimptomAlreadyExistsException {
+        for (Pacient pacient : pacientRepository.find())
+            if (Objects.equals(username, pacient.getUsername()) )
+               pacient.checkSimptomDoesNotAlreadyExist(simptom);
+    }
+    public static void addSimptom(String username,String simptom)throws SimptomAlreadyExistsException {
+        checkSimptomDoesNotAlreadyExist(username,simptom);
         for (Pacient pacient : pacientRepository.find())
             if (Objects.equals(username, pacient.getUsername()) ){
                 pacient.addSimptom(simptom);
@@ -90,6 +99,13 @@ public class PacientService{
             if (Objects.equals(username, pacient.getUsername()) )
                 if(pacient.getFeedback()==null)return 1;
         return 0;
+    }
+    public static List<Pacient> getAllPatients(){
+        return pacientRepository.find().toList();
+    }
+    public static void close() {
+        pacientRepository.close();
+        database.close();
     }
 }
 

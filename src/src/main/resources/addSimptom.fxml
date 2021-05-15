@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,13 +8,17 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="504.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddSimptomController">
+<AnchorPane prefHeight="504.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddSimptomController">
    <children>
       <ImageView fitHeight="563.0" fitWidth="1109.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@l.jpg" />
          </image>
       </ImageView>
+       <Text fx:id="simptomMessage" fill="WHITE" layoutX="106.0" layoutY="358.0" wrappingWidth="178.0">
+         <font>
+            <Font name="MV Boli" size="15.0" />
+         </font></Text>
        <Text id="title-text" fill="#b7b6ff" layoutX="174.0" layoutY="163.0" text="Adaugati un simptom!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
          <font>
             <Font name="MV Boli" size="21.0" />
@@ -38,7 +43,7 @@
             <effect>
                 <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                     </color>
                 </DropShadow>
             </effect>
@@ -50,7 +55,7 @@
             <effect>
                 <DropShadow height="48.92" radius="25.072499999999998" spread="0.56" width="53.37">
                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                     </color>
                 </DropShadow>
             </effect>

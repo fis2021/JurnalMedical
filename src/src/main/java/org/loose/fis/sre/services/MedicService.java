@@ -2,8 +2,10 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.PatientAlreadyExistsException;
 import org.loose.fis.sre.model.Medic;
 
+import java.util.List;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -11,9 +13,9 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class MedicService{
 
     private static ObjectRepository<Medic> medicRepository;
-
+    private static Nitrite database;
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("medici.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -30,7 +32,13 @@ public class MedicService{
                 if(medic.getNr_pacienti()==0)return 1;
         return 0;
     }
-    public static int  addPacient(String username,String pacient){
+    public static void checkPatientDoesNotAlreadyExist(String username,String pacient)throws PatientAlreadyExistsException {
+        for (Medic medic : medicRepository.find())
+            if (Objects.equals(username, medic.getUsername()) )
+                medic.checkPatientDoesNotAlreadyExist(pacient);
+    }
+    public static int  addPacient(String username,String pacient)throws PatientAlreadyExistsException{
+        checkPatientDoesNotAlreadyExist(username,pacient);
         int gasit=0;
         for (Medic medic : medicRepository.find())
             if (Objects.equals(username, medic.getUsername()) )
@@ -76,5 +84,12 @@ public class MedicService{
                     PacientService.sendFeedback(pacient,f);
                 }
 
+    }
+    public static List<Medic> getAllMedics(){
+        return medicRepository.find().toList();
+    }
+    public static void close() {
+        medicRepository.close();
+        database.close();
     }
 }

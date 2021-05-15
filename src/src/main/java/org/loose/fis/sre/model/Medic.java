@@ -1,6 +1,7 @@
 package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
+import org.loose.fis.sre.exceptions.PatientAlreadyExistsException;
 import org.loose.fis.sre.services.PacientService;
 
 import java.util.Objects;
@@ -54,5 +55,10 @@ public class Medic {
         if(PacientService.findPacient(Pacient)==0)t=0;
       return t;
     }
-
+    public void checkPatientDoesNotAlreadyExist(String pacient) throws PatientAlreadyExistsException {
+        for(int j=0;j<nr_pacienti;j++)
+            if(Objects.equals(pacienti[j],pacient)){
+                throw new PatientAlreadyExistsException(pacient);
+            }
+    }
 }

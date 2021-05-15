@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.SimptomAlreadyExistsException;
 import org.loose.fis.sre.services.PacientService;
 
 public class AddSimptomController {
@@ -13,9 +15,14 @@ public class AddSimptomController {
     public TextField simptomField;
     @FXML
     public static Stage stg;
+    @FXML
+    private Text simptomMessage;
     public void handleAddSimptomButtonAction() throws Exception{
-        PacientService.addSimptom(LoginController.pacient,simptomField.getText());
-        try {if(stg!=null)stg.close();
+
+       try {
+           PacientService.addSimptom(LoginController.pacient, simptomField.getText());
+
+        if(stg!=null)stg.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Pacient.fxml"));
         Parent root = (Parent) fxmlLoader.load();
             PacientController c=fxmlLoader.<PacientController>getController();
@@ -26,10 +33,11 @@ public class AddSimptomController {
             this.stg=stage;
         LoginController.stg.close();
             PacientController.stg.close();
-        } catch (Exception e) {
+        } catch(SimptomAlreadyExistsException e){simptomMessage.setText(e.getMessage());}
+           catch (Exception e) {
             e.printStackTrace();
         }
-    }
+           }
     @FXML
     public void handleCancelButtonAction(){
         PacientController.stg.close();

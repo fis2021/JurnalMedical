@@ -53,4 +53,10 @@ public class UserServiceTest {
         UserService.addUser(ADMIN,ADMIN,ADMIN);
         UserService.addUser(ADMIN,ADMIN,ADMIN);
     }
+    @Test(expected = UsernameAlreadyExistsException.class)
+            public void testCheckUserDoesNotAlreadyExists() throws UsernameAlreadyExistsException {
+            UserService.addUser(ADMIN, ADMIN, ADMIN);
+            UserService.checkUserDoesNotAlreadyExist(ADMIN);
+            }
+
 }

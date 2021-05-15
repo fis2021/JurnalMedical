@@ -1,6 +1,7 @@
 package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
+import org.loose.fis.sre.exceptions.SimptomAlreadyExistsException;
 
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class Pacient {
         return username;
     }
 
-    public void addSimptom(String simptom){
+    public void addSimptom(String simptom)throws SimptomAlreadyExistsException {
         if(nr_simptome==simptome.length){
             String[] aux=new String[simptome.length+10];
             for(int j=0;j<simptome.length;j++)aux[j]=simptome[j];
@@ -34,7 +35,12 @@ public class Pacient {
         simptome[nr_simptome]=simptom;
         nr_simptome++;
     }
-
+    public void checkSimptomDoesNotAlreadyExist(String simptom) throws SimptomAlreadyExistsException {
+                for(int j=0;j<nr_simptome;j++)
+                    if(Objects.equals(simptome[j],simptom)){
+                throw new SimptomAlreadyExistsException(simptom);
+        }
+    }
     public int removeSimptom(String simptom){
         int gasit=0;
         if(nr_simptome==0)gasit=-1;
@@ -52,4 +58,5 @@ public class Pacient {
         feedback=f;
     }
     public String getFeedback(){return feedback;}
+
 }
