@@ -58,5 +58,11 @@ public class UserServiceTest {
             UserService.addUser(ADMIN, ADMIN, ADMIN);
             UserService.checkUserDoesNotAlreadyExist(ADMIN);
             }
-
+@Test
+    public void testCheckCredentialsOk() throws UsernameAlreadyExistsException{
+    UserService.addUser(ADMIN, ADMIN, "Pacient");
+    Assertions.assertThat(UserService.CheckCredentialsOk(ADMIN,ADMIN)).isEqualTo(1);
+    UserService.addUser("admin2", "admin2", "Medic");
+    Assertions.assertThat(UserService.CheckCredentialsOk("admin2","admin2")).isEqualTo(2);
+}
 }

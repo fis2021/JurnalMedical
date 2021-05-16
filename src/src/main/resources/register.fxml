@@ -16,12 +16,12 @@
             </image>
         </ImageView>
 
-        <Text fx:id="registrationMessage" fill="WHITE" layoutX="476.0" layoutY="411.0" wrappingWidth="160.0">
+        <Text fx:id="registrationMessage" id="registrationMessage" fill="WHITE" layoutX="476.0" layoutY="411.0" wrappingWidth="160.0">
          <font>
             <Font name="MV Boli" size="13.0" />
          </font></Text>
 
-        <ChoiceBox fx:id="role" layoutX="494.0" layoutY="361.0" prefHeight="25.0" prefWidth="149.0">
+        <ChoiceBox fx:id="role" id="role" layoutX="494.0" layoutY="361.0" prefHeight="25.0" prefWidth="149.0">
         </ChoiceBox>
 
         <Button blendMode="OVERLAY" layoutX="714.0" layoutY="293.0" onAction="#handleRegisterButtonAction" prefHeight="44.0" prefWidth="94.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="Register" textOverrun="WORD_ELLIPSIS">
@@ -43,14 +43,14 @@
             <Font name="MV Boli" size="18.0" />
          </font></Label>
 
-        <TextField fx:id="usernameField" layoutX="494.0" layoutY="274.0" />
+        <TextField fx:id="usernameField" id="usernameField" layoutX="494.0" layoutY="274.0" />
 
         <Label layoutX="381.0" layoutY="316.0" text="Password:" textFill="WHITE">
          <font>
             <Font name="MV Boli" size="19.0" />
          </font></Label>
 
-        <PasswordField fx:id="passwordField" layoutX="494.0" layoutY="320.0" />
+        <PasswordField fx:id="passwordField" id="passwordField" layoutX="494.0" layoutY="320.0" />
 
         <Label layoutX="405.0" layoutY="361.0" prefHeight="25.0" prefWidth="53.0" text="Role:" textFill="WHITE">
          <font>
