@@ -1,5 +1,5 @@
 # Aplicatie Jurnal Medical
-##Membrii Echipei: 
+## Membrii Echipei: 
 Cozma Rebeca-Cristina, Cojocaru Ionut-Florin
 ## Descriere Generala
 Aplicatia isi propune sa ajute medicii si pacientii lor, oferind posibilitatea de a imbunatatii transmiterea informatilor de la pacient la medic si de a monitoriza in permanenta starea de sanatate a pacientilor.
@@ -16,7 +16,7 @@ Pentru dezvoltarea aplicatiei am folosit:
 * Acesta poate sa adauge orice simptom doreste.Un simptom nu poate fi adaugat de doua ori.
 * De asemenea, pacientii pot sterge anumite simptome.Un simptom poate fi sters numai daca se afla in jurnalul pacientului.
 * Pe langa aceste functionalitati, un pacient poate sa primeasca si sa vizualizeze feedback-ul trimis de catre un medic.
-##Medic:
+## Medic:
 * După ce medicul se conectează, acesta poate vizualiza o lista a pacientilor sai. Daca acesta nu a adugat nici un pacient in lista, se va afisa mesajul „Nici un pacient!”.
 * Acesta poate adauga pacienti care au deja un cont creat.Un pacient nu poate fi adugat de doua ori.
 * Medicul poate sterge un pacient.Pacientul trebuie sa indeplineasca simultan conditiile:
